@@ -1,0 +1,26 @@
+{
+  "name": "file_metadata",
+  "version": "0.0.1",
+  "description": "file metadata microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spoonable/File_Metadata.git"
+  },
+  "author": "binh khuu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spoonable/File_Metadata/issues"
+  },
+  "homepage": "https://github.com/spoonable/File_Metadata#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "fs": "0.0.2",
+    "multer": "^1.3.0",
+    "path": "^0.12.7"
+  }
+}
