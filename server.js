@@ -1,32 +1,19 @@
 var express = require('express')
+var autoReap = require('multer-autoreap')
 var path = require('path')
-var fs = require('fs')
 var multer = require('multer')
 var app = express()
 var upload = multer({dest: 'uploads/'})
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(autoReap)
 var port = Number(process.env.PORT || 8080)
-var storage = multer.diskStorage({
-	destination: function(req, file, callback){
-		callback(null,'./uploads')
-	},
-	filename: function(req,file,callback){
-		console.log(file)
-		callback(null, file.fieldname + '_' + Date.now() + path.extname(file.originalname))
-	}
-})
 app.get('/', function(req,res){
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 })
 
 app.post('/filesize',upload.single('file'),function(req,res){
-	var fileSizeStr = req.file.size.toString()
-	var upload = multer({
-		storage: storage
-	}).single('userfile')
-	upload(req,res,function(err){
-		res.end(fileSizeStr)
-	})
+	var fileMetaData = {'size' : req.file.size}
+	res.json(fileMetaData)
 })
 
 app.listen(port,function(err){
