@@ -1,4 +1,4 @@
 var config = {}
-config.webhost = 'http://localhost:8080/'
 
+config.webhost = 'https://nameless-woodland-46198.herokuapp.com/'
 module.exports = config;

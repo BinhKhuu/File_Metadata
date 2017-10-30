@@ -19,7 +19,6 @@
   "homepage": "https://github.com/spoonable/File_Metadata#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "fs": "0.0.2",
     "multer": "^1.3.0",
     "multer-autoreap": "^0.1.3",
     "path": "^0.12.7"
